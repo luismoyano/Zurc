@@ -19,7 +19,15 @@ World::~World()
 
 bool World::parseInput(string& input)
 {
-	return false;
+	//Assume good input, only return false if the input is not within our knowledge
+	bool returnable = true;
+
+	if(input == "look")
+	{
+		cout << "The Zucc loocc";
+	}
+
+	return returnable;
 }
 
 

@@ -10,19 +10,21 @@
 
 using namespace std;
 
+#define INPUT_START "\n>";
+
 
 int main()
 {
 	string input;
-	string INPUT_START = "\n>";
+	
 
 	World* world = new World();
 
 	cout << "Welcome to the Zurc! Let's go! We need to Succ";
+	cout << INPUT_START;
 
 	while (1)
 	{
-		cout << INPUT_START;
 		cin >> input;
 
 		if (!world->parseInput(input))
