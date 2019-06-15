@@ -1,10 +1,16 @@
-#pragma once
+#ifndef __World__
+#define __World__
+
+using namespace std;
+
 class World
 {
 public:
 	World();
-	virtual ~World();
+	~World();
 
-	bool parseInput(string input);
+	bool parseInput(string& input);
+
 };
 
+#endif

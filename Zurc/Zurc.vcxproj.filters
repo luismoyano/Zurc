@@ -18,8 +18,8 @@
     <ClInclude Include="pch.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\The Zurc\The Zurc\World.h">
-      <Filter>Archivos de origen</Filter>
+    <ClInclude Include="World.h">
+      <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -29,7 +29,7 @@
     <ClCompile Include="Zurc.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\The Zurc\The Zurc\World.cpp">
+    <ClCompile Include="World.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
   </ItemGroup>
