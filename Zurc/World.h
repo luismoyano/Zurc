@@ -3,6 +3,9 @@
 
 using namespace std;
 
+class Player;
+
+
 class World
 {
 public:
@@ -11,6 +14,9 @@ public:
 
 	bool parseInput(string& input);
 
+
+private:
+	Player* player;
 };
 
 #endif

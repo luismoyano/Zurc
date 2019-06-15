@@ -1,4 +1,5 @@
-#pragma once
+#ifndef __Player__
+#define __Player__
 
 using namespace std;
 
@@ -10,6 +11,7 @@ public:
 
 	void look();
 
-	void move(string where);
+	void move(string& direction);
 };
 
+#endif

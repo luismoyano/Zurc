@@ -6,12 +6,13 @@
 #include <conio.h>
 #include "World.h"
 #include "Instructions.h"
+#include "Player.h"
 
 using namespace std;
 
-
 World::World()
 {
+	player = new Player();
 }
 
 
@@ -22,7 +23,7 @@ World::~World()
 bool World::parseInput(string& input)
 {
 	//Lowercase input
-	std::transform(input.begin(), input.end(), input.begin(), ::tolower);
+	transform(input.begin(), input.end(), input.begin(), ::tolower);
 	
 	//Assume good input, only return false if the input is not within our knowledge
 	bool returnable = true;
@@ -33,17 +34,19 @@ bool World::parseInput(string& input)
 	}
 	else if (input == INSTRUCCTION_UP)
 	{
-
+		player->move(input);
 	}
 	else if(input == INSTRUCCTION_DOWN)
 	{
+		player->move(input);
 	}
 	else if(input == INSTRUCCTION_LEFT)
 	{
+		player->move(input);
 	}
 	else if (input == INSTRUCCTION_RIGHT)
 	{
-
+		player->move(input);
 	}
 	else
 	{
