@@ -1,7 +1,6 @@
 #ifndef __Room__
 #define __Room__
 
-
 #include "Entity.h"
 #include <list>
 

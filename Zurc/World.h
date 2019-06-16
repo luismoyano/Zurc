@@ -3,6 +3,9 @@
 
 #include <list>
 
+#define CONTENTS_IN_ROOM 4
+
+
 using namespace std;
 
 class Player;
