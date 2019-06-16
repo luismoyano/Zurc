@@ -4,6 +4,7 @@
 #include <conio.h>
 #include "Instructions.h"
 #include "Player.h"
+#include "Room.h"
 #include "Entity.h"
 #include "World.h"
 
@@ -14,7 +15,9 @@ World::World()
 {
 	player = new Player();
 
-	
+	Room* room1 = new Room("Zucc's office", "The office of the Zucc, you work here everyday");
+
+	player->setRoom(room1);
 }
 
 
@@ -32,7 +35,6 @@ bool World::parseInput(string& input)
 
 	if(input == INSTRUCTION_LOOK)
 	{
-		cout << "The Zucc loocc";
 		player->look();
 	}
 	else if (input == INSTRUCCTION_UP)

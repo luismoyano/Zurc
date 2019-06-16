@@ -10,7 +10,7 @@ class Room : public Entity
 {
 public:
 	Room();
-	Room(char* title, char* desc);
+	Room(const char* title, const char* desc);
 	~Room();
 
 	void describe();

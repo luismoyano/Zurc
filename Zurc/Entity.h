@@ -20,7 +20,7 @@ class Entity
 {
 public:
 	Entity();
-	Entity(char* name, char* desc);
+	Entity(const char* name, const char* desc);
 	~Entity();
 
 	void describe();

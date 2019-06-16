@@ -1,5 +1,5 @@
-#include <iostream>
 #include "pch.h"
+#include <iostream>
 #include "Room.h"
 
 
@@ -8,7 +8,7 @@ Room::Room()
 	type = ROOM;
 }
 
-Room::Room(char * title, char * desc) : Entity(title, desc)
+Room::Room(const char * title, const char * desc) : Entity(title, desc)
 {
 	Room();
 }
@@ -22,6 +22,7 @@ void Room::describe()
 {
 	//Describe itself
 	Entity::describe();
+	cout << "\n";
 
 	cout << "This room contains: \n";
 

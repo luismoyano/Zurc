@@ -9,7 +9,7 @@ Entity::Entity()
 {
 }
 
-Entity::Entity(char* name, char* desc) :
+Entity::Entity(const char* name, const char* desc) :
 	name(name), description(desc)
 {
 }

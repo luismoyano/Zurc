@@ -22,14 +22,21 @@ Player::Player(char* title, char* desc, Room* room) : Entity(title, desc)
 
 Player::~Player()
 {
-	if(currentRoom)
-	{
-		currentRoom->describe();
-	}
+}
+
+void Player::setRoom(Room * room)
+{
+	if (room) currentRoom = room;
 }
 
 void Player::look()
 {
+	cout << "The Zucc loocc\n";
+
+	if (currentRoom)
+	{
+		currentRoom->describe();
+	}
 }
 
 void Player::move(string & direction)

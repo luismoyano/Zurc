@@ -14,8 +14,9 @@ public:
 	Player(char* title, char* description, Room* room);
 	~Player();
 
-	void look();
+	void setRoom(Room* room);
 
+	void look();
 	void move(string& direction);
 
 private:
