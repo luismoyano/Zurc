@@ -3,6 +3,7 @@
 #include <iterator>
 #include <algorithm>
 #include "ItemFactory.h"
+#include "Globals.h"
 #include "Item.h"
 
 using namespace std;
@@ -78,9 +79,5 @@ ItemFactory::~ItemFactory()
 
 Item* ItemFactory::getRandomItem()
 {
-	int randomNumber = rand() % 20;
-	auto it = items.begin();
-	advance(it, randomNumber);
-	
-	return *it;
+	return *Globals::getRandom(items.begin(), 20);
 }
