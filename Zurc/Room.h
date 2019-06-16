@@ -7,6 +7,7 @@
 using namespace std;
 
 class Entity;
+class Exit;
 
 class Room : public Entity
 {
@@ -20,5 +21,10 @@ public:
 
 private:
 	list<Entity*> contents;
+
+	Exit * upExit;
+	Exit * downExit;
+	Exit * leftExit;
+	Exit * rightExit;
 };
 #endif
