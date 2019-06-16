@@ -1,18 +1,20 @@
 #include "pch.h"
 #include <iostream>
-#include <string>
 #include <algorithm>
-#include <vector>
 #include <conio.h>
-#include "World.h"
 #include "Instructions.h"
 #include "Player.h"
+#include "Entity.h"
+#include "World.h"
+
 
 using namespace std;
 
 World::World()
 {
 	player = new Player();
+
+	
 }
 
 
@@ -31,6 +33,7 @@ bool World::parseInput(string& input)
 	if(input == INSTRUCTION_LOOK)
 	{
 		cout << "The Zucc loocc";
+		player->look();
 	}
 	else if (input == INSTRUCCTION_UP)
 	{
