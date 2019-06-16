@@ -16,6 +16,7 @@ World::World()
 	player = new Player();
 
 	Room* room1 = new Room("Zucc's office", "The office of the Zucc, you work here everyday");
+	
 
 	player->setRoom(room1);
 }

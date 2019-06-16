@@ -33,3 +33,8 @@ void Room::describe()
 		cout << "\n";
 	}
 }
+
+void Room::addContent(Entity * content)
+{
+	if(content) contents.push_back(content);
+}

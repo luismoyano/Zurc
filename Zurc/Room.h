@@ -14,6 +14,7 @@ public:
 	~Room();
 
 	void describe();
+	void addContent(Entity* content);
 
 private:
 	list<Entity*> contents;
