@@ -14,7 +14,7 @@ Player::Player()
 
 Player::Player(char* title, char* desc) : Entity(title, desc)
 {
-
+	type = PLAYER;
 }
 
 

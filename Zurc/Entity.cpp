@@ -1,5 +1,6 @@
 #include "pch.h"
 #include <string>
+#include <iostream>
 #include "Entity.h"
 
 using namespace std;
@@ -16,4 +17,9 @@ Entity::Entity(char* name, char* desc) :
 
 Entity::~Entity()
 {
+}
+
+void Entity::describe()
+{
+	cout << name << " " << description;
 }

@@ -4,10 +4,12 @@
 
 Room::Room()
 {
+	type = ROOM;
 }
 
 Room::Room(char * title, char * desc) : Entity(title, desc)
 {
+	Room();
 }
 
 

@@ -1,6 +1,9 @@
 #ifndef __Entity__
 #define __Entity__
 
+#include <string>
+
+
 using namespace std;
 
 enum EntityType
@@ -19,6 +22,8 @@ public:
 	Entity();
 	Entity(char* name, char* desc);
 	~Entity();
+
+	void describe();
 
 protected:
 	EntityType type;
