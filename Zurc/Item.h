@@ -1,4 +1,6 @@
-#pragma once
+#ifndef __Item__
+#define __Item__
+
 #include "Entity.h"
 class Item :
 	public Entity
@@ -16,3 +18,4 @@ private:
 	int weight;
 };
 
+#endif

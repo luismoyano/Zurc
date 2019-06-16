@@ -1,4 +1,7 @@
-#pragma once
+#ifndef __Room__
+#define __Room__
+
+
 #include "Entity.h"
 #include <list>
 
@@ -19,4 +22,4 @@ public:
 private:
 	list<Entity*> contents;
 };
-
+#endif

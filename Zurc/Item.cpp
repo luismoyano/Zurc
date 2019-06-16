@@ -18,3 +18,13 @@ Item::Item(const char * title, const char * desc, int size, int weight) : Entity
 Item::~Item()
 {
 }
+
+int Item::getSize()
+{
+	return size;
+}
+
+int Item::getWeight()
+{
+	return weight;
+}
