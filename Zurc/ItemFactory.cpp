@@ -1,6 +1,7 @@
 #include "pch.h"
 #include <cstdlib>
 #include <iterator>
+#include <algorithm>
 #include "ItemFactory.h"
 #include "Item.h"
 
@@ -75,14 +76,11 @@ ItemFactory::~ItemFactory()
 {
 }
 
-Item * ItemFactory::getRandomItem()
+Item* ItemFactory::getRandomItem()
 {
-	const unsigned int n = distance(items.begin, items.end);
-	const unsigned int divisor = (RAND_MAX + 1) / n;
-
-	unsigned long k;
-	do { k = rand() / divisor; } while (k >= n);
-
-	std::advance(items.begin, k);
-	return items.begin;
+	int randomNumber = rand() % 20;
+	auto it = items.begin();
+	advance(it, randomNumber);
+	
+	return *it;
 }

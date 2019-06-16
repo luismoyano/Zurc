@@ -7,6 +7,7 @@
 #include "Room.h"
 #include "Entity.h"
 #include "World.h"
+#include "ItemFactory.h"
 
 
 using namespace std;
@@ -14,11 +15,23 @@ using namespace std;
 World::World()
 {
 	player = new Player();
+	//Room* room1 = new Room("Zucc's office", "The office of the Zucc, you work here everyday");
+	ItemFactory* factory = new ItemFactory();
 
-	Room* room1 = new Room("Zucc's office", "The office of the Zucc, you work here everyday");
+	for (size_t i = 0; i < AMOUNT_OF_ROOMS; i++)
+	{
+		Room* r = new Room("","");
+		
+		for (size_t j = 0; j < ITEMS_IN_ROOM; j++)
+		{
+			r->addContent(factory->getRandomItem());
+		}
+
+		if(i == 0) player->setRoom(r);
+
+		r->describe();
+	}
 	
-
-	player->setRoom(room1);
 }
 
 

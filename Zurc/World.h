@@ -3,8 +3,8 @@
 
 #include <list>
 
-#define CONTENTS_IN_ROOM 4
-
+#define ITEMS_IN_ROOM 4
+#define AMOUNT_OF_ROOMS 8
 
 using namespace std;
 
