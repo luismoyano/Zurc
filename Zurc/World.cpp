@@ -21,6 +21,8 @@ World::World()
 	Room* origin = roomFactory->generateDungeon();
 
 	player->setRoom(origin);
+
+	pickMode = false;
 }
 
 
@@ -55,6 +57,11 @@ bool World::parseInput(string& input)
 	else if (input == INSTRUCTION_RIGHT)
 	{
 		player->move(input);
+	}
+	else if(input == INSTRUCTION_PICKUP)
+	{
+		cout << "What do you want to pickup?\n";
+		pickMode = true;
 	}
 	else
 	{

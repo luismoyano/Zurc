@@ -18,13 +18,12 @@ public:
 	~World();
 
 	bool parseInput(string& input);
-
+	
 
 private:
 	Player* player;
-	list<Entity*> entities;
-
 	RoomFactory* roomFactory;
+	bool pickMode;
 };
 
 #endif
