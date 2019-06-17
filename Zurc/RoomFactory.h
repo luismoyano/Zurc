@@ -1,6 +1,9 @@
 #ifndef __RoomFactory__
 #define __RoomFactory__
 
+#define ITEMS_IN_ROOM 4
+#define MAX_AMOUNT_OF_EXITS_IN_A_ROOM 4
+
 
 class ItemFactory;
 class Room;
@@ -11,11 +14,13 @@ public:
 	RoomFactory();
 	~RoomFactory();
 
-	Room* getRandomRoom();
+	Room* generateDungeon(int amountOfRooms);
 
 private:
-	ItemFactory* factory;
 
+	Room* getRandomRoom();
+
+	ItemFactory* factory;
 	list <Room*> rooms;
 };
 #endif

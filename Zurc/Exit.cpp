@@ -13,7 +13,7 @@ Exit::~Exit()
 {
 }
 
-Room * Exit::getOrigin(Room * destiny)
+Room* Exit::getOrigin(Room * destiny)
 {
 	Room* returnable = nullptr;
 
@@ -21,4 +21,10 @@ Room * Exit::getOrigin(Room * destiny)
 	else if (destiny == b) returnable = a;
 
 	return returnable;
+}
+
+void Exit::setEnds(Room * entry, Room * end)
+{
+	if (entry) a = entry;
+	if (end) b = end;
 }

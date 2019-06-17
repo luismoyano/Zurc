@@ -44,7 +44,52 @@ RoomFactory::~RoomFactory()
 {
 }
 
+
+Room* RoomFactory::generateDungeon(int amountOfRooms)
+{
+	Room* room = nullptr;
+
+	for (size_t i = 0; i < amountOfRooms; i++)
+	{
+		Room* r = getRandomRoom();
+		
+		for (size_t i = 0; i < MAX_AMOUNT_OF_EXITS_IN_A_ROOM; i++)
+		{
+			r->addContent(factory->getRandomItem());
+		}
+
+		if (!room) room = r;
+	}
+
+	return room;
+}
+
+
 Room* RoomFactory::getRandomRoom()
 {
-	return *Globals::getRandom(rooms.begin(), 9);
+	Room* room = *Globals::getRandom(rooms.begin(), 9);
+
+	rooms.push_back(room);
+
+	int exits = rand() % MAX_AMOUNT_OF_EXITS_IN_A_ROOM;
+	int i = 0;
+	while (i < exits)
+	{
+		for (Room* r : rooms)
+		{
+			if (room != r && r->hasDeadEnds())
+			{
+				Exit* e = new Exit();
+				e->setEnds(room, r);
+				
+				room->setExitToNextAvailableEnd(e);
+				r->setExitToNextAvailableEnd(e);
+
+				i++;
+				break;
+			}
+		}
+	}
+
+	return room;
 }

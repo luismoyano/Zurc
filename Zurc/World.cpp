@@ -8,30 +8,19 @@
 #include "Entity.h"
 #include "World.h"
 #include "ItemFactory.h"
+#include "RoomFactory.h"
 
 
 using namespace std;
 
 World::World()
 {
-	player = new Player();
-	//Room* room1 = new Room("Zucc's office", "The office of the Zucc, you work here everyday");
-	ItemFactory* factory = new ItemFactory();
+	player = new Player();	
+	roomFactory = new RoomFactory();
 
-	for (size_t i = 0; i < AMOUNT_OF_ROOMS; i++)
-	{
-		Room* r = new Room("","");
-		
-		for (size_t j = 0; j < ITEMS_IN_ROOM; j++)
-		{
-			r->addContent(factory->getRandomItem());
-		}
+	Room* origin = roomFactory->generateDungeon(AMOUNT_OF_ROOMS);
 
-		if(i == 0) player->setRoom(r);
-
-		r->describe();
-	}
-	
+	player->setRoom(origin);
 }
 
 

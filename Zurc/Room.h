@@ -19,6 +19,10 @@ public:
 	void describe();
 	void addContent(Entity* content);
 
+	bool hasDeadEnds();
+	void setExitToNextAvailableEnd(Exit* e);
+
+
 private:
 	list<Entity*> contents;
 

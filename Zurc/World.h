@@ -3,13 +3,13 @@
 
 #include <list>
 
-#define ITEMS_IN_ROOM 4
 #define AMOUNT_OF_ROOMS 8
 
 using namespace std;
 
 class Player;
 class Entity;
+class RoomFactory;
 
 class World
 {
@@ -23,6 +23,8 @@ public:
 private:
 	Player* player;
 	list<Entity*> entities;
+
+	RoomFactory* roomFactory;
 };
 
 #endif

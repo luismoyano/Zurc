@@ -38,3 +38,19 @@ void Room::addContent(Entity * content)
 {
 	if(content) contents.push_back(content);
 }
+
+bool Room::hasDeadEnds()
+{
+	return (!upExit || !downExit || !leftExit || !rightExit);
+}
+
+void Room::setExitToNextAvailableEnd(Exit * e)
+{
+	if (!upExit) upExit = e;
+	else if (!leftExit) leftExit = e;
+	else if (!downExit) downExit = e;
+	else if (!rightExit) rightExit = e;
+}
+
+
+

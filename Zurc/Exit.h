@@ -13,6 +13,9 @@ public:
 
 	Room* getOrigin(Room* origin);
 
+	void setEnds(Room * entry, Room * end);
+
+
 private:
 	Room* a;
 	Room* b;
