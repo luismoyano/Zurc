@@ -2,7 +2,9 @@
 #include <iostream>
 #include <string>
 #include "Room.h"
+#include "Exit.h"
 #include "Player.h"
+#include "Instructions.h"
 
 using namespace std;
 
@@ -41,6 +43,27 @@ void Player::look()
 
 void Player::move(string & direction)
 {
-	cout << name << " moves " << direction;
+	cout << name << " moves " << direction <<" \n";
+
+	if (direction == INSTRUCTION_UP && currentRoom->upExit)
+	{
+		currentRoom = currentRoom->upExit->getOrigin(currentRoom);
+	}
+	else if (direction == INSTRUCTION_DOWN && currentRoom->downExit)
+	{
+		currentRoom = currentRoom->downExit->getOrigin(currentRoom);
+	}
+	else if (direction == INSTRUCTION_LEFT && currentRoom->leftExit)
+	{
+		currentRoom = currentRoom->leftExit->getOrigin(currentRoom);
+	}
+	else if (direction == INSTRUCTION_RIGHT && currentRoom->rightExit)
+	{
+		currentRoom = currentRoom->rightExit->getOrigin(currentRoom);
+	}
+	else
+	{
+		cout << "There's nothing in that direction";
+	}
 }
 

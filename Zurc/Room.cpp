@@ -1,5 +1,6 @@
 #include "pch.h"
 #include <iostream>
+#include "Exit.h"
 #include "Room.h"
 
 
@@ -20,9 +21,7 @@ Room::~Room()
 
 void Room::describe()
 {
-	//Describe itself
-	Entity::describe();
-	cout << "\n";
+	describeName();
 
 	cout << "This room contains: \n";
 
@@ -32,6 +31,23 @@ void Room::describe()
 		e->describe();
 		cout << "\n";
 	}
+
+	cout << "\n";
+	cout << "You can see these rooms around: \n";
+
+	//Describe the exits
+	if(upExit) upExit->describeEnd(this);
+	if (downExit) downExit->describeEnd(this);
+	if (leftExit) leftExit->describeEnd(this);
+	if (rightExit) rightExit->describeEnd(this);
+	cout << "\n";
+}
+
+void Room::describeName()
+{
+	//Describe itself
+	Entity::describe();
+	cout << "\n";
 }
 
 void Room::addContent(Entity * content)

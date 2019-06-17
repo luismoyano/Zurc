@@ -28,3 +28,9 @@ void Exit::setEnds(Room * entry, Room * end)
 	if (entry) a = entry;
 	if (end) b = end;
 }
+
+void Exit::describeEnd(Room * origin)
+{
+	if (origin == a && b != nullptr) b->describeName();
+	else if (origin == b && a != nullptr) a->describeName();
+}

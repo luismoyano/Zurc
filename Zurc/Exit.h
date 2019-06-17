@@ -15,6 +15,7 @@ public:
 
 	void setEnds(Room * entry, Room * end);
 
+	void describeEnd(Room* origin);
 
 private:
 	Room* a;

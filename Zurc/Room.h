@@ -17,18 +17,20 @@ public:
 	~Room();
 
 	void describe();
+	void describeName();
 	void addContent(Entity* content);
 
 	bool hasDeadEnds();
 	void setExitToNextAvailableEnd(Exit* e);
 
-
-private:
-	list<Entity*> contents;
-
 	Exit * upExit;
 	Exit * downExit;
 	Exit * leftExit;
 	Exit * rightExit;
+
+private:
+	list<Entity*> contents;
+
+
 };
 #endif

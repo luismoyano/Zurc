@@ -1,6 +1,6 @@
 #define INSTRUCTION_LOOK "look"
 
-#define INSTRUCCTION_UP "up"
-#define INSTRUCCTION_DOWN "down"
-#define INSTRUCCTION_LEFT "left"
-#define INSTRUCCTION_RIGHT "right"
+#define INSTRUCTION_UP "up"
+#define INSTRUCTION_DOWN "down"
+#define INSTRUCTION_LEFT "left"
+#define INSTRUCTION_RIGHT "right"

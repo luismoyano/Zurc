@@ -18,7 +18,7 @@ World::World()
 	player = new Player();	
 	roomFactory = new RoomFactory();
 
-	Room* origin = roomFactory->generateDungeon(AMOUNT_OF_ROOMS);
+	Room* origin = roomFactory->generateDungeon();
 
 	player->setRoom(origin);
 }
@@ -40,19 +40,19 @@ bool World::parseInput(string& input)
 	{
 		player->look();
 	}
-	else if (input == INSTRUCCTION_UP)
+	else if (input == INSTRUCTION_UP)
 	{
 		player->move(input);
 	}
-	else if(input == INSTRUCCTION_DOWN)
+	else if(input == INSTRUCTION_DOWN)
 	{
 		player->move(input);
 	}
-	else if(input == INSTRUCCTION_LEFT)
+	else if(input == INSTRUCTION_LEFT)
 	{
 		player->move(input);
 	}
-	else if (input == INSTRUCCTION_RIGHT)
+	else if (input == INSTRUCTION_RIGHT)
 	{
 		player->move(input);
 	}
@@ -63,9 +63,3 @@ bool World::parseInput(string& input)
 
 	return returnable;
 }
-
-
-
-
-
-
