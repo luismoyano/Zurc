@@ -7,7 +7,12 @@ The Zurc is a text based game inspired in Zork where you play as the Zucc!. Your
 This game has been solely machinated, written and designed by Luis Carlos Moyano Medina as a task
 
 ## How to play
-todo.
+- [Download the game here](https://github.com/luismoyano/Zurc/releases/tag/1.0.0)
+- Unzip the zip file on windows.
+- Execute the exe file.
+- For instrutions on how to play, just keep reading.
+- Enjoy!
+
 
 ## Dungeon
 There are 9 rooms interconnected, the items on the rooms will be randomly placed from a pool on each run. The room map looks like this:
