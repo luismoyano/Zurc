@@ -20,6 +20,7 @@ public:
 	void describe();
 	void describeName();
 	void addContent(Item* content);
+	Item* removeItem(Item* itemToRemove);
 
 	bool hasDeadEnds();
 	void setExitToNextAvailableEnd(Exit* e);

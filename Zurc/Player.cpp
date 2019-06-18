@@ -86,7 +86,7 @@ bool Player::pickItemByName(string & input)
 			!pickedItem
 			)
 		{
-			pickedItem = item;
+			pickedItem = currentRoom->removeItem(item);
 			picked = true;
 			break;
 		}
