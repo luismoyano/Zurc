@@ -41,6 +41,7 @@ void Item::setEmbed(int itemData)
 {
 	hasEmbed = true;
 	data += itemData;
+	data *= 2;
 }
 
 string* Item::getName()
