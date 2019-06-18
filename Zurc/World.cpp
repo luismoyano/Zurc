@@ -89,12 +89,10 @@ bool World::parseNormal(string & input)
 	else if (input == INSTRUCTION_HAND)
 	{
 		player->hand();
-
 	}
 	else if (input == INSTRUCTION_DROP)
 	{
 		player->drop();
-
 	}
 	else if (input == INSTRUCTION_EMBED)
 	{
@@ -107,6 +105,10 @@ bool World::parseNormal(string & input)
 		{
 			cout << "I can't embed this item with anything";
 		}
+	}
+	else if (input == INSTRUCTION_SUCK)
+	{
+		player->suck();
 	}
 	else
 	{

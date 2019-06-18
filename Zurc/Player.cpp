@@ -152,3 +152,22 @@ bool Player::embedItemByName(string & input)
 	return returnable;
 }
 
+void Player::suck()
+{
+	int data = 0;
+
+	if (pickedItem && (data = pickedItem->getData()) > 0)
+	{
+		strength += data / 2;
+		capacity += data / 2;
+		delete(pickedItem);
+		pickedItem = nullptr;
+
+		cout << "Mmmm! Delicious bits! The Zucc is now stronger!\n";
+	}
+	else
+	{
+		cout << "The Zucc can't succ );\n";
+	}
+}
+

@@ -9,3 +9,4 @@
 #define INSTRUCTION_HAND "hand"
 #define INSTRUCTION_DROP "drop"
 #define INSTRUCTION_EMBED "embed"
+#define INSTRUCTION_SUCK "succ"

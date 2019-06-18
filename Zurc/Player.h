@@ -24,6 +24,7 @@ public:
 	void drop();
 	bool hasSomethingToEmbed();
 	bool embedItemByName(string &input);
+	void suck();
 
 private:
 	Room* currentRoom;
