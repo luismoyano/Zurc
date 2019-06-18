@@ -27,12 +27,16 @@ int main()
 	{
 		cin >> input;
 
-		if (!world->parseInput(input))
+		if (input == "exit") break;
+		else if (!world->parseInput(input))
 		{
 			cout << "The Zucc doesn't get it!!";
 		}
+		
 
 		cout << INPUT_START;
 	}
+	
+	return 0;
 }
 
