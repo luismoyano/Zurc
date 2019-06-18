@@ -70,6 +70,11 @@ bool World::parseInput(string& input)
 			player->hand();
 			
 		}
+		else if (input == INSTRUCTION_DROP)
+		{
+			player->drop();
+
+		}
 		else
 		{
 			returnable = false;

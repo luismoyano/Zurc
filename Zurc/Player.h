@@ -21,6 +21,7 @@ public:
 	void move(string& direction);
 	bool pickItemByName(string &input);
 	void hand();
+	void drop();
 
 private:
 	Room* currentRoom;

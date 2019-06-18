@@ -7,3 +7,4 @@
 
 #define INSTRUCTION_PICKUP "pick"
 #define INSTRUCTION_HAND "hand"
+#define INSTRUCTION_DROP "drop"
