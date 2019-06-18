@@ -109,14 +109,19 @@ void Player::hand()
 
 void Player::drop()
 {
+	
+
 	if (pickedItem)
 	{
 		cout << "I drop " << *pickedItem->getName();
+		
+		currentRoom->addContent(pickedItem);
 		pickedItem = nullptr;	
 	}
 	else
 	{
 		cout << "I have no items to drop";
 	}
+	
 }
 
