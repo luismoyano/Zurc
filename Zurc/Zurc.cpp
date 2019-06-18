@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <conio.h>
+#include <ctime>
 #include "World.h"
 
 using namespace std;
@@ -12,8 +13,10 @@ using namespace std;
 
 int main()
 {
+	//init the rng
+	srand(time(NULL));
+
 	string input;
-	
 
 	World* world = new World();
 
