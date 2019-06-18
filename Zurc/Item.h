@@ -17,7 +17,6 @@ public:
 	int getWeight();
 
 	bool embed(Item* item);
-	int suckData();
 
 private:
 	bool hasEmbed;

@@ -11,6 +11,13 @@ class Player;
 class Entity;
 class RoomFactory;
 
+enum GameMode
+{
+	NORMAL,
+	PICKING,
+	EMBEDDING
+};
+
 class World
 {
 public:
@@ -23,7 +30,11 @@ public:
 private:
 	Player* player;
 	RoomFactory* roomFactory;
-	bool pickMode;
+	GameMode mode;
+
+	bool parseNormal(string& input);
+	bool parsePicking(string& input);
+	bool parseEmbedding(string& input);
 };
 
 #endif

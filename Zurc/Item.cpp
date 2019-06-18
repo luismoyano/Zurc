@@ -30,7 +30,3 @@ int Item::getWeight()
 	return weight;
 }
 
-int Item::suckData()
-{
-	return data;
-}

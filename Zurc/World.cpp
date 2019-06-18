@@ -22,7 +22,7 @@ World::World()
 
 	player->setRoom(origin);
 
-	pickMode = false;
+	mode = NORMAL;
 }
 
 
@@ -38,60 +38,88 @@ bool World::parseInput(string& input)
 	//Assume good input, only return false if the input is not within our knowledge
 	bool returnable = true;
 
-	if (!pickMode)
+	switch (mode)
 	{
-		if (input == INSTRUCTION_LOOK)
-		{
-			player->look();
-		}
-		else if (input == INSTRUCTION_UP)
-		{
-			player->move(input);
-		}
-		else if (input == INSTRUCTION_DOWN)
-		{
-			player->move(input);
-		}
-		else if (input == INSTRUCTION_LEFT)
-		{
-			player->move(input);
-		}
-		else if (input == INSTRUCTION_RIGHT)
-		{
-			player->move(input);
-		}
-		else if (input == INSTRUCTION_PICKUP)
-		{
-			cout << "What do you want to pickup?\n";
-			pickMode = true;
-		}
-		else if (input == INSTRUCTION_HAND)
-		{
-			player->hand();
-			
-		}
-		else if (input == INSTRUCTION_DROP)
-		{
-			player->drop();
+	case NORMAL:
+		returnable = parseNormal(input);
+	case PICKING:
+		returnable = parsePicking(input);
+		mode = NORMAL;
+		break;
+	case EMBEDDING:
+		returnable = parseEmbedding(input);
+		mode = NORMAL;
+		break;
+	}
 
-		}
-		else
-		{
-			returnable = false;
-		}
+	return returnable;
+}
+
+
+bool World::parseNormal(string & input)
+{
+	bool returnable = true;
+
+	if (input == INSTRUCTION_LOOK)
+	{
+		player->look();
+	}
+	else if (input == INSTRUCTION_UP)
+	{
+		player->move(input);
+	}
+	else if (input == INSTRUCTION_DOWN)
+	{
+		player->move(input);
+	}
+	else if (input == INSTRUCTION_LEFT)
+	{
+		player->move(input);
+	}
+	else if (input == INSTRUCTION_RIGHT)
+	{
+		player->move(input);
+	}
+	else if (input == INSTRUCTION_PICKUP)
+	{
+		cout << "What do you want to pickup?\n";
+		mode = PICKING;
+	}
+	else if (input == INSTRUCTION_HAND)
+	{
+		player->hand();
+
+	}
+	else if (input == INSTRUCTION_DROP)
+	{
+		player->drop();
+
+	}
+	else if (input == INSTRUCTION_EMBED)
+	{
+
 	}
 	else
 	{
-		//pickup
-		if (player->pickItemByName(input))
-		{
-			cout << "Item " << input << " picked succesfully\n";
-		}
-		else
-		{
-			cout << "The item " << input << " can't be picked\n";
-		}
-		pickMode = false;
+		returnable = false;
 	}
+
 	return returnable;
+}
+
+bool World::parsePicking(string & input)
+{
+	if (player->pickItemByName(input))
+	{
+		cout << "Item " << input << " picked succesfully\n";
+	}
+	else
+	{
+		cout << "The item " << input << " can't be picked\n";
+	}
+	pickMode = false;
+}
+
+bool World::parseEmbedding(string & input)
+{
 }
