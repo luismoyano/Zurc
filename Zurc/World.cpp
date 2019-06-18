@@ -110,6 +110,10 @@ bool World::parseNormal(string & input)
 	{
 		player->suck();
 	}
+	else if (input == INSTRUCTION_HELP)
+	{
+		help();
+	}
 	else
 	{
 		returnable = false;
@@ -140,4 +144,34 @@ void World::parseEmbedding(string & input)
 	{
 		cout << "The itams couldn't be embedded ):\n";
 	}
+}
+
+void World::help()
+{
+	cout << "Welcome to Zurc!\n";
+	cout << "\n";
+
+	cout << "You are the Zucc, your mission is to suck private data from digital devices\n";
+	cout << "The more data you suck, the stronger you get\n";
+	cout << "\n";
+
+	cout << "Commands you can do\n";
+	cout << "\n";
+
+	cout << "up, down, left, rigth: Move yourself through the rooms\n";
+	cout << "\n";
+	cout << "look: Shows you the room, the contents and the neighbor rooms\n";
+	cout << "\n";
+	cout << "pick: Allows you to pick items, keep in mind you can't carry heavy items!\n";
+	cout << "\n";
+	cout << "drop: Allows you to drop the item in your hand, it will rest in the room you're in at each moment\n";
+	cout << "\n";
+	cout << "hand: Shows you the item you're carrying right now\n";
+	cout << "\n";
+	cout << "embed: embed one item into the one in your hand, keep in mind you can only embed items with data together, the item in your hand becomes a lot more data-filled\n";
+	cout << "\n";
+	cout << "succ: Sucks the data of the item in your hand, destroys the item and makes you stronger in exchange\n";
+	cout << "\n";
+	cout << "help: Shows this menu\n";
+
 }

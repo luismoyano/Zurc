@@ -35,6 +35,7 @@ private:
 	bool parseNormal(string& input);
 	void parsePicking(string& input);
 	void parseEmbedding(string& input);
+	void help();
 };
 
 #endif
