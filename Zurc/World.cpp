@@ -65,6 +65,11 @@ bool World::parseInput(string& input)
 			cout << "What do you want to pickup?\n";
 			pickMode = true;
 		}
+		else if (input == INSTRUCTION_HAND)
+		{
+			player->hand();
+			
+		}
 		else
 		{
 			returnable = false;
@@ -81,6 +86,7 @@ bool World::parseInput(string& input)
 		{
 			cout << "The item " << input << " can't be picked\n";
 		}
+		pickMode = false;
 	}
 	return returnable;
 }

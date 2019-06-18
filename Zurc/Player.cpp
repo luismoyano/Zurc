@@ -77,9 +77,12 @@ bool Player::pickItemByName(string & input)
 
 	for (Item* item: currentRoom->contents)
 	{
+		int weight = item->getWeight();
+		int size = item->getSize();
+
 		if (input == *item->getName() && 
-			item->getWeight() <= strength && 
-			item->getSize() <= capacity &&
+			weight <= strength && 
+			size <= capacity &&
 			!pickedItem
 			)
 		{
@@ -96,7 +99,7 @@ void Player::hand()
 {
 	if(pickedItem)
 	{
-		cout << "I have " << pickedItem->getName() << " in my hand";
+		cout << "I have " << *pickedItem->getName() << " in my hand";
 	}
 	else
 	{
