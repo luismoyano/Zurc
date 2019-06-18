@@ -79,8 +79,8 @@ bool Player::pickItemByName(string & input)
 	{
 		int weight = item->getWeight();
 		int size = item->getSize();
-
-		if (input == *item->getName() && 
+		string* name = item->getName();
+		if (input == *name && 
 			weight <= strength && 
 			size <= capacity &&
 			!pickedItem
@@ -123,5 +123,32 @@ void Player::drop()
 		cout << "I have no items to drop";
 	}
 	
+}
+
+bool Player::hasSomethingToEmbed()
+{
+	return (pickedItem && pickedItem->getData() > 0);
+}
+
+bool Player::embedItemByName(string & input)
+{
+	bool returnable = false;
+
+	if (hasSomethingToEmbed())
+	{
+		for (Item* item : currentRoom->contents)
+		{
+			int data = item->getData();
+
+			if (input == *item->getName() && data > 0)
+			{
+				Item* it = currentRoom->removeItem(item);
+				pickedItem->setEmbed(data);
+				returnable = true;
+				break;
+			}
+		}
+	}
+	return returnable;
 }
 

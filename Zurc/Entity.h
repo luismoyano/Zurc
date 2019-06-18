@@ -24,7 +24,7 @@ public:
 	~Entity();
 
 	void describe();
-	string* getName();
+	virtual string* getName();
 
 protected:
 	EntityType type;

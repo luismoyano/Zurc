@@ -22,6 +22,8 @@ public:
 	bool pickItemByName(string &input);
 	void hand();
 	void drop();
+	bool hasSomethingToEmbed();
+	bool embedItemByName(string &input);
 
 private:
 	Room* currentRoom;

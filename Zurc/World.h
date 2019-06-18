@@ -33,8 +33,8 @@ private:
 	GameMode mode;
 
 	bool parseNormal(string& input);
-	bool parsePicking(string& input);
-	bool parseEmbedding(string& input);
+	void parsePicking(string& input);
+	void parseEmbedding(string& input);
 };
 
 #endif

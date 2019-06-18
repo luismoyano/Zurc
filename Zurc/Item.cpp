@@ -13,6 +13,8 @@ Item::Item(const char * title, const char * desc, int s, int w, int d) : Entity(
 	size = s;
 	weight = w;
 	data = d;
+
+	hasEmbed = false;
 }
 
 
@@ -30,3 +32,25 @@ int Item::getWeight()
 	return weight;
 }
 
+int Item::getData()
+{
+	return data;
+}
+
+void Item::setEmbed(int itemData)
+{
+	hasEmbed = true;
+	data += itemData;
+}
+
+string* Item::getName()
+{
+	string* n = new string(name);
+
+	if (hasEmbed)
+	{
+		n->append("++");
+	}
+
+	return n;
+}

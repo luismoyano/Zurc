@@ -15,8 +15,11 @@ public:
 
 	int getSize();
 	int getWeight();
+	int getData();
 
-	bool embed(Item* item);
+	void setEmbed(int itemData);
+
+	string* getName() override;
 
 private:
 	bool hasEmbed;

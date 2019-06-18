@@ -42,12 +42,13 @@ bool World::parseInput(string& input)
 	{
 	case NORMAL:
 		returnable = parseNormal(input);
+		break;
 	case PICKING:
-		returnable = parsePicking(input);
+		parsePicking(input);
 		mode = NORMAL;
 		break;
 	case EMBEDDING:
-		returnable = parseEmbedding(input);
+		parseEmbedding(input);
 		mode = NORMAL;
 		break;
 	}
@@ -97,7 +98,15 @@ bool World::parseNormal(string & input)
 	}
 	else if (input == INSTRUCTION_EMBED)
 	{
-
+		if(player->hasSomethingToEmbed())
+		{
+			cout << "What do you want to embed?\n";
+			mode = EMBEDDING;
+		}
+		else
+		{
+			cout << "I can't embed this item with anything";
+		}
 	}
 	else
 	{
@@ -107,7 +116,7 @@ bool World::parseNormal(string & input)
 	return returnable;
 }
 
-bool World::parsePicking(string & input)
+void World::parsePicking(string & input)
 {
 	if (player->pickItemByName(input))
 	{
@@ -117,9 +126,16 @@ bool World::parsePicking(string & input)
 	{
 		cout << "The item " << input << " can't be picked\n";
 	}
-	pickMode = false;
 }
 
-bool World::parseEmbedding(string & input)
+void World::parseEmbedding(string & input)
 {
+	if (player->embedItemByName(input))
+	{
+		cout << "Item embedded succesfully, use hand command to look at your item\n";
+	}
+	else
+	{
+		cout << "The itams couldn't be embedded ):\n";
+	}
 }
