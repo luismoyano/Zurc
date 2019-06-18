@@ -51,6 +51,11 @@ RoomFactory::RoomFactory()
 
 RoomFactory::~RoomFactory()
 {
+	for (vector<Room*>::iterator it = rooms.begin(); it != rooms.end(); ++it)
+	{
+		delete *it;
+	}
+	rooms.clear();
 }
 
 Room * RoomFactory::generateDungeon()

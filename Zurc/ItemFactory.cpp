@@ -75,6 +75,12 @@ ItemFactory::ItemFactory()
 
 ItemFactory::~ItemFactory()
 {
+	for (list<Item*>::iterator it = items.begin(); it != items.end(); ++it)
+	{
+		delete *it;
+	}
+
+	items.clear();
 }
 
 Item* ItemFactory::getRandomItem()
