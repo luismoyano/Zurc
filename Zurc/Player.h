@@ -6,6 +6,7 @@
 using namespace std;
 
 class Room;
+class Item;
 
 class Player : public Entity
 {
@@ -18,9 +19,15 @@ public:
 
 	void look();
 	void move(string& direction);
+	bool pickItemByName(string &input);
+	void hand();
 
 private:
 	Room* currentRoom;
+	Item* pickedItem;
+
+	int strength;
+	int capacity;
 };
 
 #endif

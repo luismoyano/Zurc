@@ -50,7 +50,7 @@ void Room::describeName()
 	cout << "\n";
 }
 
-void Room::addContent(Entity * content)
+void Room::addContent(Item * content)
 {
 	if(content) contents.push_back(content);
 }

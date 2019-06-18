@@ -2,6 +2,7 @@
 #define __Room__
 
 #include "Entity.h"
+#include "Item.h"
 #include <list>
 
 using namespace std;
@@ -18,7 +19,7 @@ public:
 
 	void describe();
 	void describeName();
-	void addContent(Entity* content);
+	void addContent(Item* content);
 
 	bool hasDeadEnds();
 	void setExitToNextAvailableEnd(Exit* e);
@@ -27,9 +28,7 @@ public:
 	Exit * downExit;
 	Exit * leftExit;
 	Exit * rightExit;
-
-private:
-	list<Entity*> contents;
+	list<Item*> contents;
 
 
 };

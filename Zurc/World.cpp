@@ -38,35 +38,49 @@ bool World::parseInput(string& input)
 	//Assume good input, only return false if the input is not within our knowledge
 	bool returnable = true;
 
-	if(input == INSTRUCTION_LOOK)
+	if (!pickMode)
 	{
-		player->look();
-	}
-	else if (input == INSTRUCTION_UP)
-	{
-		player->move(input);
-	}
-	else if(input == INSTRUCTION_DOWN)
-	{
-		player->move(input);
-	}
-	else if(input == INSTRUCTION_LEFT)
-	{
-		player->move(input);
-	}
-	else if (input == INSTRUCTION_RIGHT)
-	{
-		player->move(input);
-	}
-	else if(input == INSTRUCTION_PICKUP)
-	{
-		cout << "What do you want to pickup?\n";
-		pickMode = true;
+		if (input == INSTRUCTION_LOOK)
+		{
+			player->look();
+		}
+		else if (input == INSTRUCTION_UP)
+		{
+			player->move(input);
+		}
+		else if (input == INSTRUCTION_DOWN)
+		{
+			player->move(input);
+		}
+		else if (input == INSTRUCTION_LEFT)
+		{
+			player->move(input);
+		}
+		else if (input == INSTRUCTION_RIGHT)
+		{
+			player->move(input);
+		}
+		else if (input == INSTRUCTION_PICKUP)
+		{
+			cout << "What do you want to pickup?\n";
+			pickMode = true;
+		}
+		else
+		{
+			returnable = false;
+		}
 	}
 	else
 	{
-		returnable = false;
+		//pickup
+		if (player->pickItemByName(input))
+		{
+			cout << "Item " << input << " picked succesfully\n";
+		}
+		else
+		{
+			cout << "The item " << input << " can't be picked\n";
+		}
 	}
-
 	return returnable;
 }

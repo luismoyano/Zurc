@@ -6,3 +6,4 @@
 #define INSTRUCTION_RIGHT "right"
 
 #define INSTRUCTION_PICKUP "pick"
+#define INSTRUCTION_HAND "hand"

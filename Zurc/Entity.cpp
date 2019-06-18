@@ -23,3 +23,8 @@ void Entity::describe()
 {
 	cout << name << " " << description;
 }
+
+string* Entity::getName()
+{
+	return &name;
+}
