@@ -7,11 +7,12 @@ Item::Item()
 	type = ITEM;
 }
 
-Item::Item(const char * title, const char * desc, int s, int w) : Entity(title, desc)
+Item::Item(const char * title, const char * desc, int s, int w, int d) : Entity(title, desc)
 {
 	Item();
 	size = s;
 	weight = w;
+	data = d;
 }
 
 
@@ -27,4 +28,9 @@ int Item::getSize()
 int Item::getWeight()
 {
 	return weight;
+}
+
+int Item::suckData()
+{
+	return data;
 }
