@@ -1,4 +1,4 @@
-# Welcome to the Zurc!
+# Welcome to the Zurcc!
 
 The Zurc is a text based game inspired in Zork where you play as the Zucc!. Your goal is to suck the private data from all the devices you can at the facebook headquarters.
 
